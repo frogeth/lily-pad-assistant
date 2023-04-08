@@ -23,7 +23,7 @@ export const writeCommandsList = () => {
     "\n"
   )}`;
   fs.writeFileSync(fileLocation, fileString, "utf-8");
-  console.log(`Commands list generated at ${fileLocation}`);
+  console.log(
+    `Generated list of commands at ${fileLocation}:\n\n${fileString}`
+  );
 };
-
-export const generator = () => writeCommandsList();

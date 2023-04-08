@@ -1,3 +1,3 @@
-import { generator } from "./generator.js";
+import { writeCommandsList } from "./generator.js";
 
-generator();
+writeCommandsList();
