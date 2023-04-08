@@ -30,6 +30,24 @@ const base = {
   description: "How to mint dev Base NFT",
 };
 
-const commands = [mirror, zksync, layerzero, shardeum, base];
+const twitter = {
+  alias: "twitter",
+  response: "https://twitter.com/frogdoteth",
+  description: "Frog.eth's Official Twitter profile",
+};
+
+const gm = {
+  alias: "gm",
+  response: "come say gm https://t.me/GoodMorningFrogs",
+  description: "GM",
+};
+
+const gn = {
+  alias: "gn",
+  response: "come say gn https://t.me/GoodNightFrogs",
+  description: "GN",
+};
+
+const commands = [mirror, zksync, layerzero, shardeum, base, twitter, gm, gn];
 
 export default commands;
