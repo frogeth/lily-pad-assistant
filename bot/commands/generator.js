@@ -19,7 +19,9 @@ export const helpCommandResponse = commands
   .join("\n");
 
 export const writeCommandsList = () => {
-  const fileString = generateCommandsList().join("\n");
+  const fileString = `help - Lists all the commands \n${generateCommandsList().join(
+    "\n"
+  )}`;
   fs.writeFileSync(fileLocation, fileString, "utf-8");
   console.log(`Commands list generated at ${fileLocation}`);
 };
