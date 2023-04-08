@@ -6,24 +6,22 @@ const fileLocation = "./bot/commands/generatedCmdList.txt";
 const defaultCommandDescription = (command) =>
   `Official Airdrop Guide for ${command.alias}`;
 
-const generateCommandsList = (commands) => {
-  const commandsList = commands.map((command) => {
-    return `${command.alias} - ${
-      command.description
-        ? command.description
-        : defaultCommandDescription(command)
-    }`;
-  });
-  return commandsList;
-};
+const getDescription = (command) =>
+  command.description
+    ? command.description
+    : defaultCommandDescription(command);
 
-const writeCommandsList = (commandsList) => {
-  const commandsListString = commandsList.join("\n");
-  fs.writeFileSync(fileLocation, commandsListString, "utf-8");
+export const generateCommandsList = () =>
+  commands.map((cmd) => `${cmd.alias} - ${getDescription(cmd)}`);
+
+export const helpCommandResponse = commands
+  .map((cmd) => `/${cmd.alias}: ${getDescription(cmd)}`)
+  .join("\n");
+
+export const writeCommandsList = () => {
+  const fileString = generateCommandsList().join("\n");
+  fs.writeFileSync(fileLocation, fileString, "utf-8");
   console.log(`Commands list generated at ${fileLocation}`);
 };
 
-export default () => {
-  const commandsList = generateCommandsList(commands);
-  writeCommandsList(commandsList);
-};
+export const generator = () => writeCommandsList();

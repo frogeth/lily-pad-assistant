@@ -1,3 +1,3 @@
-import Generator from "./generator.js";
+import { generator } from "./generator.js";
 
-Generator();
+generator();
