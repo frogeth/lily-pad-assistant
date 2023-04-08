@@ -43,12 +43,14 @@ const shardeum = {
   alias: "shardeum",
   response:
     "https://mirror.xyz/frog.eth/xGK3t_-F-O_EpM7AsFR2_m5PhszqmZiLByYbGgYeFIY",
+  description: "How to setup a Testnet Shardeum node",
 };
 
 const base = {
   alias: "base",
   response:
     "https://mirror.xyz/frog.eth/yDtARfnf6nbakfSNp1osgp5eHkr8AQI4dvpRgA4hy-I",
+  description: "How to mint dev Base NFT",
 };
 
 const commands = [mirror, zksync, layerzero, shardeum, base];
