@@ -39,7 +39,19 @@ const layerzero = {
     "https://mirror.xyz/frog.eth/vupvwOMgs3e2q4w5rpfL_1gH9vDsGOYVKeerhPUt3w0",
 };
 
-const commands = [mirror, zksync, layerzero];
+const shardeum = {
+  alias: "shardeum",
+  response:
+    "https://mirror.xyz/frog.eth/xGK3t_-F-O_EpM7AsFR2_m5PhszqmZiLByYbGgYeFIY",
+};
+
+const base = {
+  alias: "base",
+  response:
+    "https://mirror.xyz/frog.eth/yDtARfnf6nbakfSNp1osgp5eHkr8AQI4dvpRgA4hy-I",
+};
+
+const commands = [mirror, zksync, layerzero, shardeum, base];
 
 const commandsList = generateCommandsList(commands);
 writeCommandsList(commandsList);
