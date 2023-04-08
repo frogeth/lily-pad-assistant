@@ -39,13 +39,13 @@ const twitter = {
 const gm = {
   alias: "gm",
   response: "come say gm https://t.me/GoodMorningFrogs",
-  description: "GM",
+  description: "Official GM chat",
 };
 
 const gn = {
   alias: "gn",
   response: "come say gn https://t.me/GoodNightFrogs",
-  description: "GN",
+  description: "Official GN chat",
 };
 
 const commands = [mirror, zksync, layerzero, shardeum, base, twitter, gm, gn];
