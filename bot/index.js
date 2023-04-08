@@ -1,5 +1,5 @@
 import { Telegraf, session } from "telegraf";
-import commands from "./commands.js";
+import commands from "./commands/commands.js";
 
 const App = async () => {
   const { BOT_TOKEN } = process.env;
