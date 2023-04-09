@@ -15,4 +15,13 @@ Official Telegram bot for [The Lily Pad](https://t.me/lilypadcrypto)
 3. Add the object to the `commands` array at the bottom
 4. Run the bot and update [@BotFather](https://t.me/botfather) commands list using /setcommands
 
+## TO-DO
+
+- [ ] Write mirror.xyz integration
+- [ ] Write tweet integration
+- [ ] Announcement generator
+- [ ] All guides text generator
+- [ ] cooldown on commands?
+- [ ] admin panel (way later down)
+
 > 🐸 Made by **Frog.eth**
