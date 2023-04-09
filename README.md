@@ -11,9 +11,23 @@ Official Telegram bot for [The Lily Pad](https://t.me/lilypadcrypto)
 ## To add or edit commands
 
 1. Fork this repo
-2. Create or edit objects in [commands.js](/bot/commands/commands.js)
-3. Add the object to the `commands` array at the bottom
-4. Run the bot and update [@BotFather](https://t.me/botfather) commands list using /setcommands
+2. Create or edit commands in [commands.js](/bot/commands/commands.js)
+
+```
+const mirror = {
+ alias: "mirror", // alias to trigger the command
+ response: "https://mirror.xyz/frog.eth", // response the bot sends
+ description: "Insert description of the command here",
+};
+```
+
+3. Add the object to the `commands` array at the bottom of [commands.js](/bot/commands/commands.js)
+
+```
+const commands = [mirror, zksync, layerzero, shardeum, base, twitter, gm, gn];
+```
+
+4. Use `npm run commands` and update [@BotFather](https://t.me/botfather) (by sending him /setCommands) and responding with the commands list generated in the [generatedCmdList.txt](./bot/commands/generatedCmdList.txt) file.
 
 ## TO-DO
 

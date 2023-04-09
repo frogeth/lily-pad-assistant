@@ -1,7 +1,7 @@
 const mirror = {
-  alias: "mirror",
-  response: "https://mirror.xyz/frog.eth",
-  description: "Frog.eth's Official Mirror.xyz profile",
+  alias: "mirror", // alias to trigger the command
+  response: "https://mirror.xyz/frog.eth", // response the bot sends
+  description: "Frog.eth's Official Mirror.xyz profile", // description of the command as it appears in the bot's /help command
 };
 
 const zksync = {
@@ -48,6 +48,7 @@ const gn = {
   description: "Official GN chat",
 };
 
+// Add new commands here
 const commands = [mirror, zksync, layerzero, shardeum, base, twitter, gm, gn];
 
 export default commands;
