@@ -31,7 +31,7 @@ const newCommandName = {
 4. Add the object to the `commands` array at the bottom of [commands.js](/bot/commands/commands.js)
 
 ```
-const commands = [newCommandName];
+const commands = [newCommandName, ...otherCommands];
 ```
 
 5. Use `npm run commands` and update [@BotFather](https://t.me/botfather) (by sending him /setCommands) and responding with the commands list generated in the [generatedCmdList.txt](./bot/commands/generatedCmdList.txt) file.
