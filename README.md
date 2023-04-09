@@ -11,7 +11,14 @@ Official Telegram bot for [The Lily Pad](https://t.me/lilypadcrypto)
 ## To add or edit commands
 
 1. Fork this repo
-2. Create or edit commands in [commands.js](/bot/commands/commands.js)
+2. Create a `.env` file with the following contents:
+
+```
+PORT= 8000 // can be whatever port you want
+BOT_TOKEN= "" // insert your bot token here
+```
+
+3. Create or edit commands in [commands.js](/bot/commands/commands.js)
 
 ```
 const mirror = {
@@ -21,13 +28,13 @@ const mirror = {
 };
 ```
 
-3. Add the object to the `commands` array at the bottom of [commands.js](/bot/commands/commands.js)
+4. Add the object to the `commands` array at the bottom of [commands.js](/bot/commands/commands.js)
 
 ```
 const commands = [mirror, zksync, layerzero, shardeum, base, twitter, gm, gn];
 ```
 
-4. Use `npm run commands` and update [@BotFather](https://t.me/botfather) (by sending him /setCommands) and responding with the commands list generated in the [generatedCmdList.txt](./bot/commands/generatedCmdList.txt) file.
+5. Use `npm run commands` and update [@BotFather](https://t.me/botfather) (by sending him /setCommands) and responding with the commands list generated in the [generatedCmdList.txt](./bot/commands/generatedCmdList.txt) file.
 
 ## TO-DO
 
