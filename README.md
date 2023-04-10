@@ -14,8 +14,7 @@ Official Telegram bot for [The Lily Pad](https://t.me/lilypadcrypto)
 2. Create a `.env` file with the following contents:
 
 ```
-PORT= 8000 // can be whatever port you want
-BOT_TOKEN= "" // insert your bot token here
+BOT_TOKEN= " " // insert your bot token here
 ```
 
 3. Create or edit commands in [commands.js](/bot/commands/commands.js)
