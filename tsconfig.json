@@ -25,8 +25,11 @@
     "paths": {
       "@/*": ["src/*"],
       "@bot": ["src/bot"],
-      "@bot/*": ["src/bot/*"]
+      "@bot/*": ["src/bot/*"],
+      "@commands/*": ["src/bot/commands/*"],
+      "@commands": ["src/bot/commands"]
     }
   },
+  "include": ["src/**.ts"],
   "exclude": ["**/node_modules", "**/dist"]
 }

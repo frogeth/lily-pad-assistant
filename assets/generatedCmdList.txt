@@ -1,0 +1,9 @@
+help - Lists all the commands 
+mirror - Frog.eth's Official Mirror.xyz profile
+zksync - Official Airdrop Guide for zksync
+layerzero - Official Airdrop Guide for layerzero
+shardeum - How to setup a Testnet Shardeum node
+base - How to mint dev Base NFT
+twitter - Frog.eth's Official Twitter profile
+gm - Official GM chat
+gn - Official GN chat

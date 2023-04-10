@@ -1,11 +1,8 @@
 import fs from "fs";
 import path from "path";
-import commands from "./commands.js";
+import { commands } from "@commands";
 
-// const fileLocation = path.resolve("./generatedCmdList.txt");
-// console.log("file name" + fileLocation);
-
-const fileLocation = "./src/bot/commands/generatedCmdList.txt";
+const fileLocation = "./assets/generatedCmdList.txt";
 
 const defaultCommandDescription = (command) =>
   `Official Airdrop Guide for ${command.alias}`;

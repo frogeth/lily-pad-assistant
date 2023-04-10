@@ -1,4 +1,3 @@
 /node_modules
-/src/bot/commands/*.txt
 .env
 /dist

@@ -2,11 +2,13 @@
 
 Official Telegram bot for [The Lily Pad](https://t.me/lilypadcrypto)
 
+> `npm run build` - Creates /dist folder for production launch
+
 > `npm run start` - Starts the bot. (Automatically runs command list generator)
 
-> `npm run commands` - Generates a list of commands that can be given to [@BotFather](https://t.me/botfather) on Telegram.
+> `npm run start-pm2` - Starts the bot using pm2. (Allows you to run in the background)
 
-> [Here are the docs for pm2 to host this on your own server](https://pm2.keymetrics.io/docs/usage/quick-start/)
+---
 
 ## To add or edit commands
 
@@ -33,7 +35,7 @@ const newCommandName = {
 const commands = [newCommandName, ...otherCommands];
 ```
 
-5. Use `npm run commands` and update [@BotFather](https://t.me/botfather) (by sending him /setCommands) and responding with the commands list generated in the [generatedCmdList.txt](./bot/commands/generatedCmdList.txt) file.
+---
 
 ## TO-DO
 
@@ -43,5 +45,7 @@ const commands = [newCommandName, ...otherCommands];
 - [ ] All guides text generator
 - [ ] cooldown on commands?
 - [ ] admin panel (way later down)
+
+---
 
 > 🐸 Made by **Frog.eth**

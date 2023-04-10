@@ -1,8 +1,7 @@
 import bot from "@bot";
-import { writeCommandsList } from "@bot/commands/generator.js";
+import { writeCommandsList } from "@commands";
 import * as e from "dotenv";
+
 e.config();
-
 writeCommandsList();
-
 bot();
