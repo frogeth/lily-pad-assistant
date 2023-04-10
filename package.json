@@ -6,20 +6,21 @@
   "main": "index.js",
   "scripts": {
     "commands": "node bot/commands/index.js",
-    "build": "tsc && tsc-alias",
+    "build": "tsc && tsc-alias && npm run copy-files",
+    "copy-files": "copyfiles -u 1 \"src/**/*.txt\" dist",
     "dev": "tsx --watch src/index.ts",
-    "start": "tsx dist/index.js",
-    "start-pm2": "pm2 start dist/index.js --node-args=\"-r tsconfig-paths/register\"",
+    "start": "node --experimental-specifier-resolution=node dist/index.js",
+    "start-pm2": "pm2 start dist/index.js --name lily-pad-assistant",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.3",
-    "express": "^4.18.2",
     "telegraf": "^4.12.2"
   },
   "devDependencies": {
+    "copyfiles": "^2.4.1",
     "tsc-alias": "^1.8.5",
     "tsconfig-paths": "^4.2.0",
     "tsx": "^3.12.6",

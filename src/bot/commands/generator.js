@@ -1,5 +1,9 @@
 import fs from "fs";
+import path from "path";
 import commands from "./commands.js";
+
+// const fileLocation = path.resolve("./generatedCmdList.txt");
+// console.log("file name" + fileLocation);
 
 const fileLocation = "./src/bot/commands/generatedCmdList.txt";
 
