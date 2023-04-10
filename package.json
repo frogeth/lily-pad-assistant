@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "commands": "node bot/commands/index.js",
-    "build": "tsc",
+    "build": "tsc && tsc-alias",
     "dev": "tsx --watch src/index.ts",
     "start": "tsx dist/index.js",
     "start-pm2": "pm2 start dist/index.js --node-args=\"-r tsconfig-paths/register\"",
@@ -20,6 +20,7 @@
     "telegraf": "^4.12.2"
   },
   "devDependencies": {
+    "tsc-alias": "^1.8.5",
     "tsconfig-paths": "^4.2.0",
     "tsx": "^3.12.6",
     "typescript": "^5.0.4"
