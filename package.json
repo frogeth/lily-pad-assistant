@@ -9,6 +9,7 @@
     "build": "tsc",
     "dev": "tsx --watch src/index.ts",
     "start": "tsx dist/index.js",
+    "start-pm2": "pm2 start dist/index.js --node-args=\"-r tsconfig-paths/register\"",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit"
   },
   "author": "",
