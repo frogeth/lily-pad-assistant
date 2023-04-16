@@ -27,7 +27,9 @@
       "@bot": ["src/bot"],
       "@bot/*": ["src/bot/*"],
       "@commands/*": ["src/bot/commands/*"],
-      "@commands": ["src/bot/commands"]
+      "@commands": ["src/bot/commands"],
+      "@mirror": ["src/mirror"],
+      "@mirror/*": ["src/mirror/*"]
     }
   },
   "include": ["src/**.ts"],

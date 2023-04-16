@@ -15,7 +15,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "arweave": "^1.13.5",
     "dotenv": "^16.0.3",
+    "graphql-request": "^6.0.0",
     "telegraf": "^4.12.2"
   },
   "devDependencies": {
