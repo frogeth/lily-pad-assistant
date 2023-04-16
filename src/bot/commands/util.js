@@ -4,15 +4,13 @@ import { commands } from "@commands";
 
 const fileLocation = "./assets/generatedCmdList.txt";
 
-const defaultCommandDescription = (command) =>
-  `Official Airdrop Guide for ${command.alias}`;
+const defaultCommandDescription = (alias) =>
+  `Official Airdrop Guide for ${alias}`;
 
-const getDescription = (command) =>
-  command.description
-    ? command.description
-    : defaultCommandDescription(command);
+const getDescription = ({ description, alias }) =>
+  description ? description : defaultCommandDescription(alias);
 
-export const generateCommandsList = () =>
+const generateCommandsList = () =>
   commands.map((cmd) => `${cmd.alias} - ${getDescription(cmd)}`);
 
 export const helpCommandResponse = commands
@@ -25,6 +23,6 @@ export const writeCommandsList = () => {
   )}`;
   fs.writeFileSync(fileLocation, fileString, "utf-8");
   console.log(
-    `Generated list of commands at ${fileLocation}:\n\n${fileString}`
+    `Generated list of commands at ${fileLocation}:\n\n${fileString}\n`
   );
 };

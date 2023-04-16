@@ -4,6 +4,12 @@ const mirror = {
   description: "Frog.eth's Official Mirror.xyz profile", // description of the command as it appears in the bot's /help command
 };
 
+const linea = {
+  alias: "linea",
+  response:
+    "https://mirror.xyz/frog.eth/DkCeQP7F2l8v1rLn1pvZ3KvHsCxNJGnK5rVkf-R5jfs",
+};
+
 const zksync = {
   alias: "zksync",
   response:
