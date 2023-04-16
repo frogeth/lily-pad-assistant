@@ -40,8 +40,6 @@ export const getTransactionIds = async (address: string, limit: number) => {
     limit: limit,
   };
 
-  console.log("getting ids for address " + address + "...");
-
   const txnData: TxnData = await request(endpoint, query, vars);
 
   const ids = txnData.transactions.edges.map((edge: any) => {
@@ -80,7 +78,6 @@ export const getTransactionIdsByDigest = async (
     limit: limit,
   };
 
-  console.log("getting ids for content digest " + digest + "...");
   const txnData: TxnData = await request(endpoint, query, vars);
 
   const ids = txnData.transactions.edges.map((edge: any) => {
