@@ -17,14 +17,15 @@ const generateCommandsList = async (commands: Command[]) =>
 
 export const helpCommandResponse = (
   defaultCommands: Command[],
-  customCommands: Command[]
+  mirrorCommands: Command[]
 ) => {
   const writeSection = (commands: Command[]) =>
     commands
       .map((cmd: any) => `/${cmd.alias}: ${getDescription(cmd)}`)
       .join("\n");
-  return `🪂 *Airdrop Guides:*\n${writeSection(
-    customCommands
+
+  return `🪂 *All Airdrop Guides:*\n /guides: Lists all the non-deprecated guides\n\n🪂 *Individual Airdrop Guides:*\n${writeSection(
+    mirrorCommands
   )}\n\n*🐸 Socials:*\n${writeSection(defaultCommands)}`;
 };
 
