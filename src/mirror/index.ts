@@ -7,9 +7,7 @@ const limit = 100;
 export default async function mirror() {
   const posts = await getMirrorPostsByContributor(address, limit);
   console.log("\nresults");
-  console.log(
-    posts.forEach((post) => {
-      console.log(post);
-    })
-  );
+  posts.forEach((post) => {
+    console.log(post.content.title);
+  });
 }
