@@ -55,6 +55,16 @@ const gn = {
 };
 
 // Add new commands here
-const commands = [mirror, zksync, layerzero, shardeum, base, twitter, gm, gn];
+const commands = [
+  mirror,
+  zksync,
+  layerzero,
+  shardeum,
+  base,
+  twitter,
+  linea,
+  gm,
+  gn,
+];
 
 export default commands;
