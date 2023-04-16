@@ -1,4 +1,5 @@
 import { getPosts, searchContentForAttribute } from "@mirror";
+import { Command } from "@commands";
 
 const mirror = {
   alias: "mirror", // alias to trigger the command
@@ -24,8 +25,10 @@ const gn = {
   description: "Official GN chat",
 };
 
-const getCommands = async () => {
-  let commands: any = [];
+export const defaultCommands: Command[] = [mirror, twitter, gm, gn];
+
+const getCommands = async (withDefaultCommands = true) => {
+  let commands: Command[] = [];
   const posts = await getPosts();
 
   posts.forEach((post) => {
@@ -38,14 +41,17 @@ const getCommands = async () => {
       "lilyPadBotDescription"
     );
 
-    const command = {
+    const command: Command = {
       alias,
       response: `https://mirror.xyz/frog.eth/${post.originalDigest}`,
       description: descriptionExists ? descriptionExists : "",
     };
     commands.push(command);
   });
-  commands = [mirror, twitter, gm, gn, ...commands];
+
+  if (withDefaultCommands) {
+    commands = [...commands, ...defaultCommands];
+  }
 
   return commands;
 };
