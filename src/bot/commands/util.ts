@@ -11,7 +11,9 @@ const getDescription = ({ description, alias }: Command) =>
   description ? description : defaultCommandDescription(alias);
 
 const generateCommandsList = async (commands: Command[]) =>
-  commands.map((cmd: Command) => `${cmd.alias} - ${getDescription(cmd)}`);
+  commands.map(
+    (cmd: Command) => `${cmd.alias.toLowerCase()} - ${getDescription(cmd)}`
+  );
 
 export const helpCommandResponse = (
   defaultCommands: Command[],
