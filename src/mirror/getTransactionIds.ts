@@ -1,9 +1,5 @@
 import { request, gql } from "graphql-request";
 
-/// Gets a list of transaction IDs for the given contributor address.
-/// Transactions are pulled from the Arweave GraphQL endpoint.
-
-// need a type for txnData
 type TxnData = {
   transactions: {
     edges: {
@@ -49,40 +45,33 @@ export const getTransactionIds = async (address: string, limit: number) => {
   return ids;
 };
 
-export const getTransactionIdsByDigest = async (
-  digest: string,
-  limit: number
-) => {
+export const getOriginalDigestById = async (id: string) => {
   const endpoint = "https://arweave.net/graphql";
 
   const query = gql`
-    query MirrorPosts($digest: String!, $limit: Int) {
-      transactions(
-        tags: [
-          { name: "App-Name", values: ["MirrorXYZ"] }
-          { name: "Original-Content-Digest", values: [$digest] }
-        ]
-        sort: HEIGHT_DESC
-        first: $limit
-      ) {
-        edges {
-          node {
-            id
-          }
+    query MirrorPostByID($ID: ID!) {
+      transaction(id: $ID) {
+        tags {
+          name
+          value
         }
       }
     }
   `;
+
   const vars = {
-    digest: digest,
-    limit: limit,
+    ID: id,
   };
 
-  const txnData: TxnData = await request(endpoint, query, vars);
+  const txnData: any = await request(endpoint, query, vars);
 
-  const ids = txnData.transactions.edges.map((edge: any) => {
-    return edge.node.id;
+  let originalDigest: string = "";
+
+  txnData.transaction.tags.forEach((tag: any) => {
+    if (tag.name === "Original-Content-Digest") {
+      originalDigest = tag.value;
+    }
   });
 
-  return ids;
+  return originalDigest;
 };

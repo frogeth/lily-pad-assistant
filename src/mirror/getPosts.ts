@@ -1,8 +1,5 @@
 import Arweave from "arweave";
-import {
-  getTransactionIds,
-  getTransactionIdsByDigest,
-} from "./getTransactionIds";
+import { getTransactionIds, getOriginalDigestById } from "./getTransactionIds";
 
 const arweave = Arweave.init({
   host: "arweave.net",
@@ -25,48 +22,25 @@ export const getMirrorPostsByContributor = async (
 ) => {
   const ids = await getTransactionIds(address, limit);
 
-  let allPosts: any = [];
   let uniquePosts: any = [];
+  let uniqueDigests: string[] = [];
 
   for (const id of ids) {
+    const originalDigest = await getOriginalDigestById(id);
     const json = await getTransactionData(id);
+    const post = { originalDigest, ...json };
 
-    allPosts.push(json);
-  }
-
-  allPosts.forEach((post: any) => {
-    const isUniqueAndUpdated = uniquePosts.every((uniquePost: any) => {
-      const isUnique = uniquePost.content.title !== post.content.title;
-
-      const isUpdated = uniquePost.timestamp
-        ? uniquePost.content.timestamp < post.content.timestamp
-        : true;
-
-      return isUnique && isUpdated;
-    });
-
-    if (uniquePosts.length === 0) {
+    if (!uniqueDigests.includes(originalDigest)) {
+      uniqueDigests.push(originalDigest);
       uniquePosts.push(post);
-    } else if (isUniqueAndUpdated) {
+    } else if (uniqueDigests.length === 0) {
+      uniqueDigests.push(originalDigest);
       uniquePosts.push(post);
     }
-  });
-
-  const posts: any[] = Object.values(uniquePosts);
-
-  return posts as MirrorPost[];
-};
-
-export const getMirrorPostByDigest = async (digest: string, limit: number) => {
-  const ids = await getTransactionIdsByDigest(digest, limit);
-
-  let uniquePosts: any = {};
-  for (const id of ids) {
-    const json = await getTransactionData(id);
-    uniquePosts[json.originalDigest] = json;
   }
 
   const posts: any[] = Object.values(uniquePosts);
+
   return posts as MirrorPost[];
 };
 
