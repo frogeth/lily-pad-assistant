@@ -30,7 +30,7 @@ export const helpCommandResponse = (
 };
 
 export const writeBotFatherCommandsList = async (commands: Command[]) => {
-  const fileString = `help - Lists all the commands \n${(
+  const fileString = `help - Lists all the commands \nguides - Lists all the non-deprecated guides\n${(
     await generateCommandsList(commands)
   ).join("\n")}`;
 
