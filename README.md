@@ -40,10 +40,10 @@ const commands = [newCommandName, ...otherCommands];
 ## TO-DO
 
 - [ ] add support for deprecating mirror posts
-- [ x ] Write mirror.xyz integration
+- [x] Write mirror.xyz integration
 - [ ] Write tweet integration
 - [ ] Announcement generator
-- [ x ] All guides text generator
+- [x] All guides text generator
 - [ ] cooldown on commands?
 - [ ] admin panel (way later down)
 
