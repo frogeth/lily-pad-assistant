@@ -1,4 +1,6 @@
 import { Telegraf } from "telegraf";
+import AnyCase from './AnyCase'
+
 import {
   getCommands,
   helpCommandResponse,
@@ -10,6 +12,7 @@ import {
 const App = async () => {
   const { BOT_TOKEN = "" } = process.env;
   const bot = new Telegraf(BOT_TOKEN);
+  AnyCase.apply(bot);
   const mirrorCommands = await getCommands(false);
   const commands = [...mirrorCommands, ...defaultCommands];
 
