@@ -44,7 +44,7 @@
 
 <!-- Contributing -->
 ## 🤝 Contributing
-Contributions are always welcomed.
+Contributions are always welcomed. Just open a PR :D
 
 <!-- Footer -->
 <p align="center">
