@@ -6,6 +6,7 @@
   <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript">
   <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
   <img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js">
+  <img src="https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white" alt="Graphql">
   <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram">
   <img src="https://img.shields.io/badge/Ethereum-3C3C3D?style=for-the-badge&logo=Ethereum&logoColor=white" alt="Ethereum">
 </p>
@@ -15,8 +16,9 @@
 
 <!-- Features -->
 ## ✨ Features
-- Detection of Mirror Posts for Frog.Eth
-- Custom Commands, and default commands
+- Telegram menus and commands
+- Automatic creation of telegram commands based on mirror posts
+- Custom Commands, and default commands (all case supported)
 - Auto Deployment to Digital Ocean
 
 ## Commands
