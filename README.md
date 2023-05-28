@@ -1,9 +1,5 @@
 <!-- Title -->
-
 <h1 align="center">LilyPad Assistant</h1>
-
-<!-- Description -->
-<p align="center">Official Telegram bot for https://t.me/lilypadcrypto</p>
 
 <!-- Badges -->
 <p align="center">
@@ -13,6 +9,9 @@
   <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram">
   <img src="https://img.shields.io/badge/Ethereum-3C3C3D?style=for-the-badge&logo=Ethereum&logoColor=white" alt="Ethereum">
 </p>
+
+<!-- Description -->
+<p align="center">Official Telegram bot for https://t.me/lilypadcrypto</p>
 
 <!-- Features -->
 ## ✨ Features
