@@ -20,7 +20,7 @@ jobs:
           envs: BOT_TOKEN
           script: |
             rm -rf lily-pad-assistant
-            git clone git@github.com:frogeth/lily-pad-assistant.git
+            git clone https://github.com/frogeth/lily-pad-assistant.git
             cd lily-pad-assistant
             echo 'Bot_Token= "$Bot_Token"' > .env
             npm i
