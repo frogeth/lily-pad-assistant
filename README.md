@@ -18,7 +18,7 @@
 ## ✨ Features
 - Telegram menus and commands
 - Automatic creation of telegram commands based on mirror posts
-- Custom Commands, and default commands (all case supported)
+- Custom Commands, and default commands (with any type of casing supported for the commands)
 - Auto Deployment to Digital Ocean
 
 ## 🔧 Commands
