@@ -23,6 +23,7 @@ jobs:
             git clone https://github.com/frogeth/lily-pad-assistant.git
             cd lily-pad-assistant
             echo 'Bot_Token= "$Bot_Token"' > .env
+            ls
             npm i
             npm run build
             npm run start-pm2
