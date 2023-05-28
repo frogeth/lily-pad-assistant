@@ -8,7 +8,8 @@
     "build": "rm -rf dist && tsc && tsc-alias",
     "dev": "tsx --watch src/index.ts",
     "start": "node --experimental-specifier-resolution=node dist/index.js",
-    "start-pm2": "pm2 stop 0 && pm2 delete 0 && pm2 start dist/index.js --name lily-pad-assistant --node-args=\"--experimental-specifier-resolution=node\"",
+    "stop-pm2": "pm2 stop 0 && pm2 delete 0",
+    "start-pm2": "pm2 start dist/index.js --name lily-pad-assistant --node-args=\"--experimental-specifier-resolution=node\"",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit"
   },
   "author": "",
