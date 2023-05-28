@@ -16,10 +16,10 @@ jobs:
           key: ${{secrets.KEY}}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
-            ls -al
-            cd lily-pad-assistant
-            git pull
-            npm i
-            npm run build
-            npm run start-pm2
-            echo 'Deployment to digital ocean finished'
+            ls
+            # cd lily-pad-assistant
+            # git pull
+            # npm i
+            # npm run build
+            # npm run start-pm2
+            # echo 'Deployment to digital ocean finished'
