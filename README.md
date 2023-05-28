@@ -1,14 +1,31 @@
-# lily-pad-assistant
+<!-- Title -->
 
-Official Telegram bot for [The Lily Pad](https://t.me/lilypadcrypto)
+<h1 align="center">LilyPad Assistant</h1>
 
+<!-- Description -->
+<p align="center">Official Telegram bot for https://t.me/lilypadcrypto</p>
+
+<!-- Badges -->
+<p align="center">
+  <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript">
+  <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
+  <img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js">
+  <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram">
+  <img src="https://img.shields.io/badge/Ethereum-3C3C3D?style=for-the-badge&logo=Ethereum&logoColor=white" alt="Ethereum">
+</p>
+
+<!-- Features -->
+## ✨ Features
+- Detection of Mirror Posts for Frog.Eth
+- Custom Commands, and default commands
+- Auto Deployment to Digital Ocean
+
+## Commands
 > `npm run build` - Creates /dist folder for production launch
 
 > `npm run start` - Starts the bot. (Automatically runs command list generator)
 
 > `npm run start-pm2` - Starts the bot using pm2. (Allows you to run in the background)
-
----
 
 ## To add or edit commands
 
@@ -35,8 +52,6 @@ const newCommandName = {
 const commands = [newCommandName, ...otherCommands];
 ```
 
----
-
 ## TO-DO
 
 - [ ] add support for deprecating mirror posts
@@ -47,6 +62,12 @@ const commands = [newCommandName, ...otherCommands];
 - [ ] cooldown on commands?
 - [ ] admin panel (way later down)
 
----
+<!-- Contributing -->
+## 🤝 Contributing
+Contributions are always welcomed.
 
-> 🐸 Made by **Frog.eth**
+<!-- Footer -->
+<p align="center">
+  Made with ❤️ by Frog.eth
+</p>
+
