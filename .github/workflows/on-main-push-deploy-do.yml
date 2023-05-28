@@ -16,6 +16,7 @@ jobs:
           key: ${{secrets.KEY}}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
+            ls -al
             cd lily-pad-assistant
             git pull
             npm i
