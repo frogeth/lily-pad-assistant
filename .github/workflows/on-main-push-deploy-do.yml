@@ -10,16 +10,20 @@ jobs:
     steps:
       - name: Deploy to DigitalOcean Droplet
         uses: appleboy/ssh-action@master
+        env:
+            BOT_TOKEN: ${{secrets.BOT_TOKEN}}
         with:
           host: ${{secrets.HOST}}
           username: ${{secrets.USERNAME}}
           key: ${{secrets.KEY}}
           passphrase: ${{ secrets.PASSPHRASE }}
+          envs: BOT_TOKEN
           script: |
-            ls
-            # cd lily-pad-assistant
-            # git pull
-            # npm i
-            # npm run build
-            # npm run start-pm2
-            # echo 'Deployment to digital ocean finished'
+            rm -rf lily-pad-assistant
+            git clone git@github.com:frogeth/lily-pad-assistant.git
+            cd lily-pad-assistant
+            echo 'Bot_Token= "$Bot_Token"' > .env
+            npm i
+            npm run build
+            npm run start-pm2
+            echo 'Deployment to digital ocean finished'
