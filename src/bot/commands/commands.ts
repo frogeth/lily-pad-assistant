@@ -7,6 +7,12 @@ const mirror = {
   description: "Frog.eth's Official Mirror.xyz profile", // description of the command as it appears in the bot's /help command
 };
 
+const discord = {
+  alias: "discord",
+  response: "https://discord.gg/TYHzpHQvY2",
+  description: "Gemskis: Frog.eth's Official Discord",
+};
+
 const twitter = {
   alias: "twitter",
   response: "https://twitter.com/frogdoteth",
@@ -25,7 +31,7 @@ const gn = {
   description: "Official GN chat",
 };
 
-export const defaultCommands: Command[] = [mirror, twitter, gm, gn];
+export const defaultCommands: Command[] = [mirror, twitter, discord, gm, gn];
 
 const getCommands = async (withDefaultCommands = true) => {
   let commands: Command[] = [];
