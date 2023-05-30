@@ -1,7 +1,4 @@
-export const searchContentForAttribute = (
-  content: string,
-  attribute: string
-) => {
+export const searchContentForAttribute = (content: string, attribute: string) => {
   let value: string = "";
   let key = `${attribute}: `;
 

@@ -4,28 +4,20 @@ export type Command = {
   description: string;
 };
 
-const defaultCommandDescription = (alias: Command["alias"]) =>
-  `Official Airdrop Guide for ${alias}`;
+const defaultCommandDescription = (alias: Command["alias"]) => `Official Airdrop Guide for ${alias}`;
 
 const getDescription = ({ description, alias }: Command) =>
   description ? description : defaultCommandDescription(alias);
 
 const generateCommandsList = async (commands: Command[]) =>
-  commands.map(
-    (cmd: Command) => `${cmd.alias.toLowerCase()} - ${getDescription(cmd)}`
-  );
+  commands.map((cmd: Command) => `${cmd.alias.toLowerCase()} - ${getDescription(cmd)}`);
 
-export const helpCommandResponse = (
-  defaultCommands: Command[],
-  mirrorCommands: Command[]
-) => {
+export const helpCommandResponse = (defaultCommands: Command[], mirrorCommands: Command[]) => {
   const writeSection = (commands: Command[]) =>
-    commands
-      .map((cmd: any) => `/${cmd.alias}: ${getDescription(cmd)}`)
-      .join("\n");
+    commands.map((cmd: any) => `/${cmd.alias}: ${getDescription(cmd)}`).join("\n");
 
   return `🪂 *All Airdrop Guides:*\n /guides: Lists all the non-deprecated guides\n\n🪂 *Individual Airdrop Guides:*\n${writeSection(
-    mirrorCommands
+    mirrorCommands,
   )}\n\n*🐸 Socials:*\n${writeSection(defaultCommands)}`;
 };
 

@@ -16,10 +16,7 @@ export const getTransactionIds = async (address: string, limit: number) => {
   const query = gql`
     query MirrorPosts($address: String!, $limit: Int) {
       transactions(
-        tags: [
-          { name: "App-Name", values: ["MirrorXYZ"] }
-          { name: "Contributor", values: [$address] }
-        ]
+        tags: [{ name: "App-Name", values: ["MirrorXYZ"] }, { name: "Contributor", values: [$address] }]
         sort: HEIGHT_DESC
         first: $limit
       ) {

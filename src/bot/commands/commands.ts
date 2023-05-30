@@ -1,5 +1,5 @@
-import { getPosts, searchContentForAttribute } from "@mirror";
 import { Command } from "@commands";
+import { getPosts, searchContentForAttribute } from "@mirror";
 
 const mirror = {
   alias: "mirror", // alias to trigger the command
@@ -32,14 +32,8 @@ const getCommands = async (withDefaultCommands = true) => {
   const posts = await getPosts();
 
   posts.forEach((post) => {
-    const alias = searchContentForAttribute(
-      post.content.body,
-      "lilyPadBotCommand"
-    );
-    const descriptionExists = searchContentForAttribute(
-      post.content.body,
-      "lilyPadBotDescription"
-    );
+    const alias = searchContentForAttribute(post.content.body, "lilyPadBotCommand");
+    const descriptionExists = searchContentForAttribute(post.content.body, "lilyPadBotDescription");
 
     const command: Command = {
       alias,

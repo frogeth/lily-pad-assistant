@@ -1,5 +1,5 @@
-import Arweave from "arweave";
 import { getTransactionIds, getOriginalDigestById } from "./getTransactionIds";
+import Arweave from "arweave";
 
 const arweave = Arweave.init({
   host: "arweave.net",
@@ -16,10 +16,7 @@ export const getTransactionData = async (id: string) => {
   return json;
 };
 
-export const getMirrorPostsByContributor = async (
-  address: string,
-  limit: number
-) => {
+export const getMirrorPostsByContributor = async (address: string, limit: number) => {
   const ids = await getTransactionIds(address, limit);
 
   let uniquePosts: any = [];

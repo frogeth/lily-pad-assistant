@@ -1,13 +1,7 @@
-import { Telegraf } from "telegraf";
-import AnyCase from './AnyCase'
+import AnyCase from "./AnyCase";
 
-import {
-  getCommands,
-  helpCommandResponse,
-  Command,
-  writeBotFatherCommandsList,
-  defaultCommands,
-} from "@commands";
+import { getCommands, helpCommandResponse, Command, writeBotFatherCommandsList, defaultCommands } from "@commands";
+import { Telegraf } from "telegraf";
 
 const App = async () => {
   const { BOT_TOKEN = "" } = process.env;
@@ -23,13 +17,13 @@ const App = async () => {
   bot.command("help", (ctx) =>
     ctx.reply(helpCommandResponse(defaultCommands, mirrorCommands), {
       parse_mode: "Markdown",
-    })
+    }),
   );
 
   bot.command("guides", async (ctx) => {
-    let inline_keyboard: any = [];
+    let inlineKeyboard: any = [];
     mirrorCommands.forEach((command: Command) => {
-      inline_keyboard.push([
+      inlineKeyboard.push([
         {
           text: command.alias,
           url: command.response,
@@ -40,10 +34,7 @@ const App = async () => {
     ctx.reply("🪂 *Frog.eth Airdrop Guides:*\nCome visit us @lilyPadCrypto", {
       parse_mode: "Markdown",
       reply_markup: {
-        inline_keyboard: [
-          [{ text: "Official Mirror", url: "https://mirror.xyz/frog.eth" }],
-          ...inline_keyboard,
-        ],
+        inline_keyboard: [[{ text: "Official Mirror", url: "https://mirror.xyz/frog.eth" }], ...inlineKeyboard],
       },
     });
   });
