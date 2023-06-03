@@ -9,7 +9,7 @@ const mirror = {
 
 const discord = {
   alias: "discord",
-  response: "https://discord.gg/TYHzpHQvY2",
+  response: "https://discord.gg/gemskis",
   description: "Gemskis: Frog.eth's Official Discord",
 };
 
