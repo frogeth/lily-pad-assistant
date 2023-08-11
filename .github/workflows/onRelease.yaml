@@ -1,0 +1,47 @@
+name: Release
+on:
+  push:
+    tags:
+      - "*"
+
+permissions:
+  checks: write
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Create Env File
+        run: |
+          touch .env.local
+          echo BOT_TOKEN= "${{secrets.BOT_TOKEN}}" >> .env
+          echo ALLOWED_CHANNEL_ID= "${{ secrets.ALLOWED_CHANNEL_ID }}" >> .env
+          echo DISCORD_WEBHOOK= "${{ secrets.DISCORD_WEBHOOK }}" >> .env
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DO_TOKEN }}
+
+      - name: Log in to DO Container Registry
+        run: doctl registry login --expiry-seconds 3600
+
+      - name: Build Ens Scout
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: |
+            registry.digitalocean.com/frogtools/lily-pad:${{github.ref_name}}
