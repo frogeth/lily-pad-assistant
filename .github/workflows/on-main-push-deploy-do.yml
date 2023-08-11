@@ -1,5 +1,5 @@
 name: Deploy to DigitalOcean Droplet
-'on':
+"on":
   push:
     branches:
       - main
@@ -11,18 +11,18 @@ jobs:
       - name: Deploy to DigitalOcean Droplet
         uses: appleboy/ssh-action@master
         env:
-            BOT_TOKEN: ${{secrets.BOT_TOKEN}}
+          BOT_TOKEN: ${{secrets.BOT_TOKEN}}
         with:
           host: ${{secrets.HOST}}
           username: ${{secrets.USERNAME}}
           key: ${{secrets.KEY}}
           passphrase: ${{ secrets.PASSPHRASE }}
-          envs: BOT_TOKEN
+          envs: BOT_TOKEN,ALLOWED_CHANNEL_ID,DISCORD_WEBHOOK
           script: |
             rm -rf lily-pad-assistant
             git clone https://github.com/frogeth/lily-pad-assistant.git
             cd lily-pad-assistant
-            echo 'Bot_Token= "$Bot_Token"' > .env
+            echo 'BOT_TOKEN= "$Bot_Token"\nALLOWED_CHANNEL_ID= "$ALLOWED_CHANNEL_ID"\nDISCORD_WEBHOOK= "$DISCORD_WEBHOOK"' > .env
             npm i
             npm run build
             npm run stop-pm2
