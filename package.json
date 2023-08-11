@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf dist && tsc && tsc-alias",
+    "build": "rm -rf dist && npx tsc && npx tsc-alias",
     "dev": "tsx --watch src/index.ts",
     "start": "node --experimental-specifier-resolution=node dist/index.js",
     "stop-pm2": "pm2 stop 0 && pm2 delete 0",
