@@ -23,7 +23,7 @@ jobs:
             git clone https://github.com/frogeth/lily-pad-assistant.git
             cd lily-pad-assistant
             echo 'BOT_TOKEN= "$Bot_Token"\nALLOWED_CHANNEL_ID= "$ALLOWED_CHANNEL_ID"\nDISCORD_WEBHOOK= "$DISCORD_WEBHOOK"' > .env
-            npm i
+            npm i --save-dev
             npm run build
             npm run stop-pm2
             npm run start-pm2
