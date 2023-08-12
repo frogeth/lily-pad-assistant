@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lilypad-bot
+  labels:
+    app: lilypad-bot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lilypad-bot
+  template:
+    metadata:
+      labels:
+        app: lilypad-bot
+    spec:
+      containers:
+        - name: lilypad-bot
+          image: registry.digitalocean.com/frogtools/lily-pad:main
