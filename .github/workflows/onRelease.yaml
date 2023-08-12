@@ -36,7 +36,7 @@ jobs:
       - name: Log in to DO Container Registry
         run: doctl registry login --expiry-seconds 3600
 
-      - name: Build Ens Scout
+      - name: Build LilyPad Assistant
         uses: docker/build-push-action@v4
         with:
           context: .
