@@ -12,9 +12,7 @@ class TelegrafAnyCase {
   static apply(bot) {
     // Force all commands to be lowercase
     bot.command = function (commands, ...fns) {
-      commands = Array.isArray(commands)
-        ? commands.map((command) => command.toLowerCase())
-        : commands.toLowerCase();
+      commands = Array.isArray(commands) ? commands.map((command) => command.toLowerCase()) : commands.toLowerCase();
       return this.use(Composer.command(commands, ...fns));
     };
 
@@ -32,19 +30,12 @@ class TelegrafAnyCase {
    */
   static lowercase() {
     return Composer.entity("bot_command", (ctx, next) => {
-      const entity = ctx.message.entities.find(
-        (entity) => entity.offset === 0 && entity.type === "bot_command"
-      );
-      const command = ctx.message.text.substring(
-        entity.offset,
-        entity.offset + entity.length
-      );
-      ctx.message.text = ctx.message.text
-        .split(command)
-        .join(command.toLowerCase());
+      const entity = ctx.message.entities.find((entity) => entity.offset === 0 && entity.type === "bot_command");
+      const command = ctx.message.text.substring(entity.offset, entity.offset + entity.length);
+      ctx.message.text = ctx.message.text.split(command).join(command.toLowerCase());
       return next(ctx);
     });
   }
 }
 
-export default TelegrafAnyCase
+export default TelegrafAnyCase;
