@@ -17,3 +17,4 @@ spec:
       containers:
         - name: lilypad-bot
           image: registry.digitalocean.com/frogtools/lily-pad:main
+          imagePullPolicy: Always
