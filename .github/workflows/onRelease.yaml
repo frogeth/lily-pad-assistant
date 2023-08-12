@@ -45,16 +45,3 @@ jobs:
           push: true
           tags: |
             registry.digitalocean.com/frogtools/lily-pad:${{github.ref_name}}
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to DigitalOcean Droplet
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{secrets.HOST}}
-          username: ${{secrets.USERNAME}}
-          key: ${{secrets.SSH_KEY}}
-          script: |
-            docker stop $(docker ps -a -q)
-            docker pull registry.digitalocean.com/frogtools/lily-pad:main
-            docker run registry.digitalocean.com/frogtools/lily-pad:main
