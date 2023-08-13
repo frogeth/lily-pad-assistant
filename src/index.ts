@@ -13,7 +13,7 @@ app.post("/snapshot", (req, res) => {
   if (req.headers.authentication === process.env.SNAPSHOT_WEBHOOK_SECRET) {
     return res.send("Received a POST HTTP method");
   } else {
-    return res.send("Failed to authenticate.");
+    return res.status(401).send("Failed to authenticate.");
   }
 });
 
