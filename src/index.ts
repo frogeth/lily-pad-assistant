@@ -5,6 +5,7 @@ import express from "express";
 e.config();
 bot();
 const app = express();
+app.use(express.json());
 
 app.post("/snapshot", (req, res) => {
   console.log(req.body);
