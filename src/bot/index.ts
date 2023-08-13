@@ -4,9 +4,9 @@ import { getCommands, helpCommandResponse, Command, writeBotFatherCommandsList, 
 import { Telegraf } from "telegraf";
 import { channelPost } from "telegraf/filters";
 
+export const bot = new Telegraf(process.env.BOT_TOKEN);
+
 const App = async () => {
-  const { BOT_TOKEN = "" } = process.env;
-  const bot = new Telegraf(BOT_TOKEN);
   AnyCase.apply(bot);
   const mirrorCommands = await getCommands(false);
   const commands = [...mirrorCommands, ...defaultCommands];
