@@ -8,6 +8,7 @@ const app = express();
 
 app.post("/snapshot", (req, res) => {
   console.log(req.body);
+  console.log(req.headers);
   return res.send("Received a POST HTTP method");
 });
 
