@@ -21,6 +21,7 @@ jobs:
           echo BOT_TOKEN= "${{secrets.BOT_TOKEN}}" >> .env
           echo ALLOWED_CHANNEL_ID= "${{ secrets.ALLOWED_CHANNEL_ID }}" >> .env
           echo DISCORD_WEBHOOK= "${{ secrets.DISCORD_WEBHOOK }}" >> .env
+          echo SNAPSHOT_WEBHOOK_SECRET= "${{secrets.SNAPSHOT_WEBHOOK_SECRET}}" >> .env
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
