@@ -5,7 +5,8 @@ import { z } from "zod";
 export const AppConfig = z.object({
   BOT_TOKEN: z.string(),
   ALLOWED_CHANNEL_ID: z.string(),
-  DISCORD_WEBHOOK: z.string().startsWith("https://discord.com/api/webhooks/"),
+  GEMSKI_DISCORD_WEBHOOK: z.string().startsWith("https://discord.com/api/webhooks/"),
+  JEFF_DISCORD_WEBHOOK: z.string().startsWith("https://discord.com/api/webhooks/"),
   SNAPSHOT_WEBHOOK_SECRET: z.string(),
 });
 
