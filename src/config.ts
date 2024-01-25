@@ -7,6 +7,7 @@ export const AppConfig = z.object({
   ALLOWED_CHANNEL_ID: z.string(),
   GEMSKI_DISCORD_WEBHOOK: z.string().startsWith("https://discord.com/api/webhooks/"),
   JEFF_DISCORD_WEBHOOK: z.string().startsWith("https://discord.com/api/webhooks/"),
+  UNDERWORLD_DISCORD_WEBHOOK: z.string().startsWith("https://discord.com/api/webhooks/"),
   SNAPSHOT_WEBHOOK_SECRET: z.string(),
 });
 

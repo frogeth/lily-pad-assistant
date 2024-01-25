@@ -16,7 +16,7 @@ const App = async () => {
     const fileId = photoArray[photoArray.length - 1].file_id;
     const fileLink = await ctx.telegram.getFileLink(fileId);
     sendDiscordMessage(
-      [process.env.JEFF_DISCORD_WEBHOOK, process.env.GEMSKI_DISCORD_WEBHOOK],
+      [process.env.JEFF_DISCORD_WEBHOOK, process.env.GEMSKI_DISCORD_WEBHOOK, process.env.UNDERWORLD_DISCORD_WEBHOOK],
       {
         content: ctx.channelPost.caption,
         files: [{ attachment: fileLink.href }],
@@ -27,7 +27,7 @@ const App = async () => {
 
   bot.on(channelPost("text"), (ctx) => {
     sendDiscordMessage(
-      [process.env.GEMSKI_DISCORD_WEBHOOK, process.env.JEFF_DISCORD_WEBHOOK],
+      [process.env.GEMSKI_DISCORD_WEBHOOK, process.env.JEFF_DISCORD_WEBHOOK, process.env.UNDERWORLD_DISCORD_WEBHOOK],
       ctx.channelPost.text,
       ctx.update.channel_post.chat.id,
     );
