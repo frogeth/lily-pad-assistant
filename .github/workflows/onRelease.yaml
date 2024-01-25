@@ -22,6 +22,7 @@ jobs:
           echo ALLOWED_CHANNEL_ID= "${{ secrets.ALLOWED_CHANNEL_ID }}" >> .env
           echo JEFF_DISCORD_WEBHOOK= "${{ secrets.JEFF_DISCORD_WEBHOOK }}" >> .env
           echo GEMSKI_DISCORD_WEBHOOK= "${{ secrets.GEMSKI_DISCORD_WEBHOOK }}" >> .env
+          echo UNDERWORLD_DISCORD_WEBHOOK= "${{ secrets.UNDERWORLD_DISCORD_WEBHOOK }}" >> .env
           echo SNAPSHOT_WEBHOOK_SECRET= "${{secrets.SNAPSHOT_WEBHOOK_SECRET}}" >> .env
 
       - name: Set up QEMU
