@@ -37,17 +37,20 @@ const getCommands = async (withDefaultCommands = true) => {
   let commands: Command[] = [];
   const posts = await getPosts();
 
-  posts.forEach((post) => {
+  for (const post of posts) {
     const alias = searchContentForAttribute(post.content.body, "lilyPadBotCommand");
+    if (alias === "") continue; // Skip this iteration if alias is empty
+
     const descriptionExists = searchContentForAttribute(post.content.body, "lilyPadBotDescription");
 
-    const command: Command = {
+    const command = {
       alias,
       response: `https://mirror.xyz/frog.eth/${post.originalDigest}`,
       description: descriptionExists ? descriptionExists : "",
     };
+
     commands.push(command);
-  });
+  }
 
   if (withDefaultCommands) {
     commands = [...commands, ...defaultCommands];
