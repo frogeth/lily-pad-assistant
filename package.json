@@ -34,7 +34,7 @@
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-prettier": "4.2.1",
     "prettier": "2.8.8",
-    "tsc-alias": "^1.8.6",
+    "tsc-alias": "^1.8.8",
     "tsconfig-paths": "^4.2.0",
     "tsx": "^4.6.2",
     "typescript": "^5.1.3"
