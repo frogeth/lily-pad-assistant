@@ -10,18 +10,19 @@ const App = async () => {
   AnyCase.apply(bot);
   const mirrorCommands = await getCommands(false);
   const commands = [...mirrorCommands, ...defaultCommands];
+  const discordServerList = [
+    process.env.JEFF_DISCORD_WEBHOOK,
+    process.env.GEMSKI_DISCORD_WEBHOOK,
+    process.env.FARMER_CAPITAL_DISCORD_WEBHOOK,
+    process.env.UNDERWORLD_DISCORD_WEBHOOK,
+  ];
 
   bot.on(channelPost("photo"), async (ctx) => {
     const photoArray = ctx.update.channel_post.photo;
     const fileId = photoArray[photoArray.length - 1].file_id;
     const fileLink = await ctx.telegram.getFileLink(fileId);
     sendDiscordMessage(
-      [
-        process.env.JEFF_DISCORD_WEBHOOK,
-        process.env.GEMSKI_DISCORD_WEBHOOK,
-        process.env.FARMER_CAPITAL_DISCORD_WEBHOOK,
-        process.env.UNDERWORLD_DISCORD_WEBHOOK,
-      ],
+      discordServerList,
       {
         content: ctx.channelPost.caption,
         files: [{ attachment: fileLink.href }],
@@ -31,11 +32,7 @@ const App = async () => {
   });
 
   bot.on(channelPost("text"), (ctx) => {
-    sendDiscordMessage(
-      [process.env.GEMSKI_DISCORD_WEBHOOK, process.env.JEFF_DISCORD_WEBHOOK, process.env.UNDERWORLD_DISCORD_WEBHOOK],
-      ctx.channelPost.text,
-      ctx.update.channel_post.chat.id,
-    );
+    sendDiscordMessage(discordServerList, ctx.channelPost.text, ctx.update.channel_post.chat.id);
   });
 
   commands.forEach((command: Command) => {
