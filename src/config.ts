@@ -8,6 +8,7 @@ export const AppConfig = z.object({
   GEMSKI_DISCORD_WEBHOOK: z.string().startsWith("https://discord.com/api/webhooks/"),
   JEFF_DISCORD_WEBHOOK: z.string().startsWith("https://discord.com/api/webhooks/"),
   UNDERWORLD_DISCORD_WEBHOOK: z.string().startsWith("https://discord.com/api/webhooks/"),
+  FARMER_CAPITAL_DISCORD_WEBHOOK: z.string().startsWith("https://discord.com/api/webhooks/"),
   SNAPSHOT_WEBHOOK_SECRET: z.string(),
 });
 
