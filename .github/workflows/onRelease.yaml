@@ -23,6 +23,7 @@ jobs:
           echo JEFF_DISCORD_WEBHOOK= "${{ secrets.JEFF_DISCORD_WEBHOOK }}" >> .env
           echo GEMSKI_DISCORD_WEBHOOK= "${{ secrets.GEMSKI_DISCORD_WEBHOOK }}" >> .env
           echo UNDERWORLD_DISCORD_WEBHOOK= "${{ secrets.UNDERWORLD_DISCORD_WEBHOOK }}" >> .env
+          echo FARMER_CAPITAL_DISCORD_WEBHOOK= "${{ secrets.FARMER_CAPITAL_DISCORD_WEBHOOK }}" >> .env
           echo SNAPSHOT_WEBHOOK_SECRET= "${{secrets.SNAPSHOT_WEBHOOK_SECRET}}" >> .env
 
       - name: Set up QEMU
